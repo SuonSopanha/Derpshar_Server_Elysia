@@ -1,7 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../sequelizeClient';
 
-
 class Product extends Model {
   public id!: number;
   public name!: string;
@@ -11,6 +10,12 @@ class Product extends Model {
 
 Product.init(
   {
+    id : {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      allowNull: false,
+      primaryKey: true,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
